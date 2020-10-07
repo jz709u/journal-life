@@ -16,6 +16,11 @@
 		697D088025269A7000E9B00A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 697D087E25269A7000E9B00A /* LaunchScreen.storyboard */; };
 		697D088B25269A7100E9B00A /* Journal_LifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697D088A25269A7100E9B00A /* Journal_LifeTests.swift */; };
 		697D089625269A7100E9B00A /* Journal_LifeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697D089525269A7100E9B00A /* Journal_LifeUITests.swift */; };
+		69DCBE312529A911004ECCA5 /* CalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DCBE302529A911004ECCA5 /* CalendarExtensions.swift */; };
+		69DCBE3C252B457F004ECCA5 /* SwiftUIComponents+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DCBE3B252B457F004ECCA5 /* SwiftUIComponents+Convenience.swift */; };
+		69DCBE41252D3069004ECCA5 /* JournalEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DCBE40252D3069004ECCA5 /* JournalEntryView.swift */; };
+		69DCBE46252D3092004ECCA5 /* JournalEntrySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DCBE45252D3092004ECCA5 /* JournalEntrySectionView.swift */; };
+		69DCBE4C252D30EC004ECCA5 /* JournalBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DCBE4B252D30EC004ECCA5 /* JournalBook.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		697D089125269A7100E9B00A /* Journal LifeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Journal LifeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		697D089525269A7100E9B00A /* Journal_LifeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal_LifeUITests.swift; sourceTree = "<group>"; };
 		697D089725269A7100E9B00A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69DCBE302529A911004ECCA5 /* CalendarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtensions.swift; sourceTree = "<group>"; };
+		69DCBE3B252B457F004ECCA5 /* SwiftUIComponents+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUIComponents+Convenience.swift"; sourceTree = "<group>"; };
+		69DCBE40252D3069004ECCA5 /* JournalEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryView.swift; sourceTree = "<group>"; };
+		69DCBE45252D3092004ECCA5 /* JournalEntrySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntrySectionView.swift; sourceTree = "<group>"; };
+		69DCBE4B252D30EC004ECCA5 /* JournalBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalBook.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +111,10 @@
 		697D086F25269A6100E9B00A /* Journal Life */ = {
 			isa = PBXGroup;
 			children = (
-				697D087025269A6100E9B00A /* AppDelegate.swift */,
-				697D087225269A6100E9B00A /* SceneDelegate.swift */,
-				697D087725269A6100E9B00A /* ContentView.swift */,
+				69DCBE4A252D30DD004ECCA5 /* Model */,
+				69DCBE2F2529A8FB004ECCA5 /* Extensions */,
+				697D08A425269AC700E9B00A /* View */,
+				697D08A325269AAA00E9B00A /* App */,
 				697D087925269A7000E9B00A /* Assets.xcassets */,
 				697D087E25269A7000E9B00A /* LaunchScreen.storyboard */,
 				697D088125269A7000E9B00A /* Info.plist */,
@@ -137,6 +148,42 @@
 				697D089725269A7100E9B00A /* Info.plist */,
 			);
 			path = "Journal LifeUITests";
+			sourceTree = "<group>";
+		};
+		697D08A325269AAA00E9B00A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				697D087025269A6100E9B00A /* AppDelegate.swift */,
+				697D087225269A6100E9B00A /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		697D08A425269AC700E9B00A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				697D087725269A6100E9B00A /* ContentView.swift */,
+				69DCBE40252D3069004ECCA5 /* JournalEntryView.swift */,
+				69DCBE45252D3092004ECCA5 /* JournalEntrySectionView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		69DCBE2F2529A8FB004ECCA5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				69DCBE302529A911004ECCA5 /* CalendarExtensions.swift */,
+				69DCBE3B252B457F004ECCA5 /* SwiftUIComponents+Convenience.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		69DCBE4A252D30DD004ECCA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				69DCBE4B252D30EC004ECCA5 /* JournalBook.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,10 +317,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69DCBE312529A911004ECCA5 /* CalendarExtensions.swift in Sources */,
 				697D087625269A6100E9B00A /* Journal_Life.xcdatamodeld in Sources */,
 				697D087125269A6100E9B00A /* AppDelegate.swift in Sources */,
 				697D087825269A6100E9B00A /* ContentView.swift in Sources */,
+				69DCBE4C252D30EC004ECCA5 /* JournalBook.swift in Sources */,
 				697D087325269A6100E9B00A /* SceneDelegate.swift in Sources */,
+				69DCBE46252D3092004ECCA5 /* JournalEntrySectionView.swift in Sources */,
+				69DCBE41252D3069004ECCA5 /* JournalEntryView.swift in Sources */,
+				69DCBE3C252B457F004ECCA5 /* SwiftUIComponents+Convenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +495,7 @@
 				DEVELOPMENT_TEAM = FYX9G3872W;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Journal Life/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -463,6 +516,7 @@
 				DEVELOPMENT_TEAM = FYX9G3872W;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Journal Life/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
