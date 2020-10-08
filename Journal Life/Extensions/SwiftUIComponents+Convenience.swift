@@ -14,7 +14,7 @@ struct JZLazyStackScrollView<T: JZSectionData>: JZBaseView {
     var sectionData: [T]
     var vertical = true
     var body: some View {
-        if vertical { ScrollView { LazyVStack { stackBody } } }
+        if vertical { ScrollView { LazyVStack(content: { stackBody }) } }
         else { ScrollView { LazyHStack { stackBody } } }
     }
     
@@ -94,11 +94,34 @@ struct RowData: JZRowData {
 
 struct GithubJobsContentView: View {
     
+    struct AlertMessage: Identifiable {
+        let id = UUID()
+        let message: String
+    }
+    
     @ObservedObject var manager = GithubJobsPostingManager()
+    @State var alertMessage: AlertMessage?
     
     var body: some View {
         NavigationView {
-            JZLazyStackScrollView(sectionData: manager.sectionData).onAppear(perform: { })
+            VStack {
+                SearchBar(onChange: { (value) in
+                    manager.searchText = value
+                },
+                text: manager.searchText)
+                JZLazyStackScrollView(sectionData: manager.sectionData)
+                    .navigationViewStyle(DoubleColumnNavigationViewStyle())
+                    .navigationTitle("Github Jobs")
+                    .toolbar {
+                        ToolbarItem(placement: .bottomBar) {
+                            Button("search jobs") {
+                                alertMessage = AlertMessage(message: "hello")
+                            }
+                        }
+                    }.alert(item: $alertMessage) { m in
+                        Alert (title: Text("Search"), message: Text(m.message),  dismissButton: nil)
+                    }
+            }
         }.environmentObject(JZStyleGuide())
     }
 }
@@ -109,6 +132,8 @@ class GithubJobsPostingManager: ObservableObject {
     @Published var sectionData = [SectionData]()
     var cancelable: AnyCancellable?
     
+    var searchText = ""
+    
     init() {
 
         cancelable = session.dataTaskPublisher(for: URL(string:"https://jobs.github.com/positions.json?description=swift&page=1")!)
@@ -117,14 +142,21 @@ class GithubJobsPostingManager: ObservableObject {
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { print("\($0)") },
                   receiveValue: {
-                    self.sectionData = [SectionData(headerText: "test", rows: $0.map { RowData(id: $0.id, text:$0.company) })]
+                    self.sectionData = [SectionData(headerText: "test",
+                                                    rows: $0.map { RowData(id: $0.id,
+                                                                           text:$0.description)
+                                                    })]
                   })
+        
+    }
+    
+    func requestJobs() {
         
     }
 }
 
 
-struct GithubJob: Decodable, Identifiable {
+struct GithubJob: Decodable, Identifiable, CustomStringConvertible {
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -135,7 +167,7 @@ struct GithubJob: Decodable, Identifiable {
         case companyURL = "company_url"
         case location
         case title
-        case description
+        case jobDescription = "description"
         case companyLogo = "company_logo"
         case howToApply = "how_to_apply"
     }
@@ -147,9 +179,13 @@ struct GithubJob: Decodable, Identifiable {
     var companyURL: URL
     var location: String
     var title: String
-    var description: String
+    var jobDescription: String
     var companyLogo: String?
     var howToApply: String
+    
+    var description: String {
+        "\(title)\n\(company)\n\(location)\n\(jobDescription)"
+    }
 }
 
 

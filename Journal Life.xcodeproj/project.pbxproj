@@ -21,6 +21,7 @@
 		69DCBE41252D3069004ECCA5 /* JournalEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DCBE40252D3069004ECCA5 /* JournalEntryView.swift */; };
 		69DCBE46252D3092004ECCA5 /* JournalEntrySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DCBE45252D3092004ECCA5 /* JournalEntrySectionView.swift */; };
 		69DCBE4C252D30EC004ECCA5 /* JournalBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DCBE4B252D30EC004ECCA5 /* JournalBook.swift */; };
+		69DCBE54252F5582004ECCA5 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DCBE53252F5582004ECCA5 /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		69DCBE40252D3069004ECCA5 /* JournalEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryView.swift; sourceTree = "<group>"; };
 		69DCBE45252D3092004ECCA5 /* JournalEntrySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntrySectionView.swift; sourceTree = "<group>"; };
 		69DCBE4B252D30EC004ECCA5 /* JournalBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalBook.swift; sourceTree = "<group>"; };
+		69DCBE53252F5582004ECCA5 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				697D087725269A6100E9B00A /* ContentView.swift */,
 				69DCBE40252D3069004ECCA5 /* JournalEntryView.swift */,
 				69DCBE45252D3092004ECCA5 /* JournalEntrySectionView.swift */,
+				69DCBE53252F5582004ECCA5 /* SearchBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				69DCBE4C252D30EC004ECCA5 /* JournalBook.swift in Sources */,
 				697D087325269A6100E9B00A /* SceneDelegate.swift in Sources */,
 				69DCBE46252D3092004ECCA5 /* JournalEntrySectionView.swift in Sources */,
+				69DCBE54252F5582004ECCA5 /* SearchBar.swift in Sources */,
 				69DCBE41252D3069004ECCA5 /* JournalEntryView.swift in Sources */,
 				69DCBE3C252B457F004ECCA5 /* SwiftUIComponents+Convenience.swift in Sources */,
 			);
